@@ -1,42 +1,143 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <meta http-equiv=“Pragma” content=”no-cache”>
 <meta http-equiv=“Expires” content=”-1?>
 <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
-<html>
+<html lang="en-US">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=380">
+    <title>To do list with Notifications</title>
+    <!-- Icon originated from design by Sabine Wollender: http://thenounproject.com/wosamo/ -->
+    <link rel="icon" type="image/png" href="img/icon-128.png">
+    <link href='https://fonts.googleapis.com/css?family=Donegal+One|Lily+Script+One' rel='stylesheet' type='text/css'>
 
-    <title>Realtime communication with WebRTC</title>
-
-    <link rel="stylesheet" href="/css/main.css" />
-
+    <link rel="stylesheet" href="/css/mainu.css" />
 </head>
-
 <body>
 
-    <h1>Realtime communication with WebRTC_rob</h1>
+    <h1>To do list</h1>
 
-    <h1>Realtime communication with WebRTC_Stevens1</h1>
+    <div class="task-box">
+
+        <ul id="task-list">
+
+    </div>
+
+    </ul>
     <div id="videos">
-        <video id="localVideo" autoplay muted playsinline></video>
+        <video width ="200"id="localVideo" autoplay muted playsinline></video>
         <video id="remoteVideo" autoplay playsinline></video>
     </div>
     <textarea id="dataChannelSend" disabled
               placeholder="Press Start, enter some text, then press Send."></textarea>
 <textarea id="dataChannelReceive" disabled></textarea>
 
-<div id="buttons">
-    <button id="startButton">Start</button>
-    <button id="sendButton">Send</button>
-    <button id="closeButton">Stop</button>
-    <button id="SendData">Send Data</button>
+    <div id="buttons">
+        <button id="startButton">Start</button>
+        <button id="sendButton">Send</button>
+        <button id="closeButton">Stop</button>
+        <button id="SendData">Send Data</button>
 
-</div>
+    </div>
+    <div class="form-box">
+        <h2>Add new to do.</h2>
+
+        <form id="task-form" action="index.html">
+            <div class="full-width"><label for="title">Task title:</label><input type="text" id="title" required></div>
+            <div class="half-width"><label for="deadline-hours">Hours (hh):</label><input type="number" id="deadline-hours" required></div>
+            <div class="half-width"><label for="deadline-minutes">Mins (mm):</label><input type="number" id="deadline-minutes" required></div>
+            <div class="third-width">
+                <label for="deadline-day">Day:</label>
+                <select id="deadline-day" required>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </div>
+
+            <div class="third-width">
+                <label for="deadline-month">Data Type:</label>
+                <select id="deadline-month" required>
+                    <option value="Gas Bill No">Gas Bill No</option>
+                    <option value="Electricity No">Electricity No</option>
+                    <option value="Addredss">Addredss</option>
+                    <option value="DOB">DOB</option>
+                    <option value="Genda">Genda</option>
+                    <option value="Post Code">Post Code</option>
+                    <option value="First Line off address">First Line off address</option>
+                    <option value="National security No">National security No</option>
+                   
+                </select>
+            </div>
+
+            <div class="third-width">
+                <label for="deadline-year">Year:</label>
+                <select id="deadline-year" required>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                </select>
+            </div>
+
+            <div><input type="submit" id="submit" value="Add Task"></div>
+            <div></div>
+        </form>
+    </div>
+
+    <div id="toolbar">
+        <ul id="notifications">
+        </ul>
+
+        <button id="enable">
+            Enable notifications
+        </button>
+    </div>
+
+
+    <!--<h1>Realtime communication with WebRTC_rob</h1>
+
+    <h1>Realtime communication with WebRTC_Stevens1</h1>-->
     <!-- This file is automatically added/served when running "node index.js". -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="js/main.js"></script>
 
 </body>
+
+<script src="js/doit.js"></script>
 
 </html>

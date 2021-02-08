@@ -277,6 +277,8 @@ function sendMessage(message) {
     socket.emit('message', message);
 }
 
+
+
 // This client receives a message
 socket.on('message', function (message) {
     console.log('Client received message:', message);

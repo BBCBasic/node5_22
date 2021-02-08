@@ -20,7 +20,13 @@
   <ItemGroup>
     <Content Include="cert.pem" />
     <Content Include="index.html" />
+    <Content Include="js\doit.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="key.pem" />
+    <Content Include="old_Index.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="test.js" />
     <Content Include="package.json" />
     <Content Include="index.js" />
