@@ -427,5 +427,5 @@ window.onload = function () {
     }
 
     // using a setInterval to run the checkDeadlines() function every second
-    setInterval(checkDeadlines, 1000);
+  //  setInterval(checkDeadlines, 1000);
 }
